@@ -19,3 +19,7 @@ lista1.pop()
 #EL .pop aparte de eliminar el utlimo elemento, lo retorna
 
 print(lista1)
+
+#O SEA UN IF PUEDE RECORRER UNA LISTA BUSCANDO UN ELEMTNO WTFFF
+if 2 in lista1:
+    print("que verga")
