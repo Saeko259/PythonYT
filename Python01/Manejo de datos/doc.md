@@ -176,7 +176,37 @@ with open("texto.txt") as f:
         print(lineas)
 ```
 
+### 3.2 Metodos de escritura
 
+#### 3.2.1 ```write()```
+
+Escribe exactamente el string que le des en el archivo en la posicion del cursor en la que estes, retorna la cantidad de caracteres, y deja el cursor en la posicion justo despues del ultimo caracter escrito.
+
+**Ejemplo sintaxsis**
+
+```python
+with open("texto.txt", "w") as f:
+    n = f.write("Hola")
+```
+
+**Nota:** Si quieres que se escriba una nueva linea, debes escribir al inicio ```\n```.
+
+#### 3.2.2 ```writelines(lista)```
+
+Escribe una lista de strings en el archivo, mas no retorna nada, si no colocas el salto de linea colocara todo lo de la lista en la misma linea. El cursor queda justo en la posicion despues del ultimo caracter escrito.
+
+---
+### **Resumen de metodos**
+
+| Metodo |  Que hace ? | Que retorna ?|
+| --- | --- | --- |  
+| read() | lee todo el archivo |string|
+| readline() | una línea | string|
+| readlines() | lee todas las lineas | lista de strings|
+| write() | escribe string | retorna nº caracteres |
+| writelines() | escribe lista | no retorna |
+| tell() | dónde esta el cursor| int |
+| seek() | mueve el cursor | null|
 
 
 
