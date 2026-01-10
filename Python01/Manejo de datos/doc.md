@@ -208,5 +208,62 @@ Escribe una lista de strings en el archivo, mas no retorna nada, si no colocas e
 | tell() | dónde esta el cursor| int |
 | seek() | mueve el cursor | null|
 
+## Problemas Encontrados en el camino !!
+
+### 1. Rutas y Ubicacion de archivo
+
+Al intentar ejectuar de manera directa el siguiente bloque de codigo arroja error:
+
+```python
+with open("textop.txt","r") as f:
+    contenido = f.read()
+    print(contenido)
+```
+
+El error que nos arroja es que no encuentra el archivo en la supuesta carpeta que esta trabajando el archivo, pero la realidad es que python trabaja con un **directorio de trabajo** pero no necesariamente en la carpeta donde tu tengas tu archivo actual, para esto vamos a ubicar al inicio del codigo la ruta de tu archivo principal, para esto vamos a usar una variable que nos da python ```__file__```, junto a otras funciones del sistema .
+
+1. **```__file__```** nos da la ubicacion actual del archivo que se esta ejecutando
+
+2. **```os.path.dirname(ruta)```**: A esta funcion le das como parametro un archivo y te retorna la carpeta que lo contiene.
+
+3. **```os.path.join("ruta","carpeta","archivo",...)```** Construye rutas con el formato correcto del sistema, con los parametros puestos la funcion retornaria lo siguiente: ruta/carpeta/archivo. Esta funcion no solo puedes unir de manera lineal las rutas, si seguido de una ruta, colocas un **".."**, sube una carpeta. Por ejemplo, en el siguiente caso:
+
+```css
+Proyecto/
+ ├─ data/
+ │   └─ macros.txt
+ └─ src/
+     └─ main.py
+
+```
+
+Aqui tendriamos que acceder a nuestra carpeta madre del archivo que estamos accediendo, luego acceder a data, y luego a nuestro archivo de texto, lo hariamos de la siguiente manera:
+
+```python
+#Ruta archivo prinicipal <- file
+#Ruta carpeta que contiene el archivo principal <- dirname
+base = os.path.dirname(__file__)
+#Accedemos a la ruta de la carpeta de nuestro archivo <- base
+#Subimos una carpeta <- ".."
+#Accedemos a nuestro archivo de trabajo <- "data","macros.txt"
+ruta = os.path.join(base,"..","data","macros.txt")
+```
+
+Ya con esto hecho el problema se fixearia asi:
+
+```python
+import os
+
+base = os.path.dirname(__file__)
+ruta = os.path.join(base,"..","data","macros.txt")
+with open(ruta, "r") as f:
+    contenido = f.read()
+    print(contenido)
+```
+
+**Nota:** Siempre debemos importar el modulo os al inicio del codigo para poder acceder a funciones de este, utilizamos path, que es un submodulo de os, para poder acceder a las funciones de este, ya que es un modulo especializado en rutas; a conocimiento del lector, utilizamos el punto puesto que eso indica que uno esta dentro del otro ```os.path.dirname()``` os <- path <- dirname.
+
+
+
 
 
