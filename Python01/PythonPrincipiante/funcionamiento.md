@@ -58,3 +58,17 @@ primera_varible:int ="chao" <- En documentacion sale que deberia ser int, pero l
 ```
 
 ### 2.2 ```Input()```
+Es una funcion que te permite obtener datos a traves de la consola. Lo que este dentro del input es lo que se muestra en consola al pedir el dato. La funcion te retorna
+
+```python
+valor = input("Ingrese su nombre: ")
+```
+Por default el input retornara un dato tipo str, por lo que si queremos que la variable sea de otro tipo de dato debemos hacer lo siguiente:
+
+```python
+edad = int(input("Ingresa tu edad: "))
+```
+## 3. Python 103
+
+### 3.1 Condicionales
+

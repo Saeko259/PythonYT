@@ -13,7 +13,7 @@ h = 5
 # Es una funcion que te permite obtener datos a traves de la consola
 #Lo que este dentro del input es lo que se muestra al pedir el dato
 valor = input("hola: ")
-#Por default, el valor ingresado al input se categoriza como una cadena de texti
+
 print(valor)
 #Si queremos asignar varias variables a la vez, podemos usar split()
 #El split por default separa por espacios
