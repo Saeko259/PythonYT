@@ -117,3 +117,4 @@ print(listap[2][1])
 Es decir, las listas son cajones organizados, y entre mas listas anidemos son cajones dentro de cajones.
 
 ### 4.2 Slicing de listas
+
