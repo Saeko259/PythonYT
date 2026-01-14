@@ -70,5 +70,50 @@ edad = int(input("Ingresa tu edad: "))
 ```
 ## 3. Python 103
 
+Este apartado se documentara cuando el dev no tenga pereza de comentar cosas obvias, por lo que nos centraremos en el resto y despues pondre al dia esto
 ### 3.1 Condicionales
 
+## 4. Python 104 - listas
+
+En este apartado daremos inicio a lo que son las listas, matrices (listas dentro de listas) y las diferentes maneras que podemos operar con estas.
+
+
+### 4.1 Listas y matrices
+
+Son un conjunto o secuencia mutable, la cual puede contener distintos tipos de datos, en python las listas se establecen con corchetes:
+
+```python
+mi_primera_lista = [1,2,3,"string"]
+```
+
+Puedo contener **listas dentro de listas**, lo que abre la posibilidad a matrices:
+
+```python
+mi_primera_matriz=[[0,1,2],[3,4,5],[6,7,8]]
+```
+
+Para acceder a los elementos de una lista, debo colocar la posicion del elemento al lado del nombre de la lista, asi:
+
+```python
+lista1=[1,2,3]
+#Estamos imprimiendo el primer elememto
+print(lista1[0])
+```
+
+Ahora, para acceder a un elemento de una lista dentro de otra, la logica se mantiene, accedo a la posicion de la lista interna, y luego a la posicion del elemento dentro de la lista interna.
+
+```css
+Lista principal (Contiene filas)
+ └─ Lista interna(Contiene columnas)
+    └─ Elementos dentro de esa fila
+```
+
+```python
+listap = [[0,1,2],[3,4,5],[6,7,8]]
+#Imprimo el elemento que esta en la tercera fila, segunda columa, es decir, el 7
+print(listap[2][1])
+```
+
+Es decir, las listas son cajones organizados, y entre mas listas anidemos son cajones dentro de cajones.
+
+### 4.2 Slicing de listas
