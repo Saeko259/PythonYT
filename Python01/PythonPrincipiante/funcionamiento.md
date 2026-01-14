@@ -118,3 +118,23 @@ Es decir, las listas son cajones organizados, y entre mas listas anidemos son ca
 
 ### 4.2 Slicing de listas
 
+Python me permite recorrer los indices que yo quiera especificamente entre dos posiciones a y b, creando un intervalo de la forma [a, b), lo que nos retorna una nueva lista. 
+
+```python
+lista = [1,2,3,4]
+print(lista[1:3])#Imprime 2 y 3
+```
+
+A esta manera de recorrer las listas puedo agregarle un parametro mas, lo que va a hacer que no solo se limite el intervalo en el que se recorre la lista, sino que cada cuantos elementos tiene en cuenta, es decir, si va de 1 en 1, o de 2 en 2 y asi. La estrucutura que utilizamos es:
+
+```python
+lista[desde:hasta:como]
+```
+
+Si quiero recorrer toda la lista pero iterarla de manera distinta, dejo los dos primeros parametros vacios y coloco de cuanto en cuanto quiero recorrerla.
+
+```python
+lista[::2] #Recorro la lista de dos en dos
+````
+
+### 4.3 Funciones y metodos  de las listas

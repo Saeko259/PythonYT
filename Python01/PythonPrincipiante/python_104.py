@@ -25,7 +25,7 @@ print(matriz1[0][2])
 
 #07.1 Slicing de listas
 lista1 = [1 , 2, 3, 4 ,5]
-#Python me permite recorrer los indices que yo quiera especificamente entre dos posiciones a y b, creando un intervalo de la forma [a, b), lo que nos retorna una nueva lista
+#c
 print(lista1[1:4])
 print(lista1[:]) #Una copia de la lista
 
